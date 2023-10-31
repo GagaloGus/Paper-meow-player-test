@@ -12,7 +12,7 @@ public class SkoController : MonoBehaviour
 
     private Transform groundPoint;
     //SerializeField hace que aunque la variable sea privada se vea en el inspector
-    [SerializeField] private bool isGrounded, isFlipped, isMovingBackwards;
+    [SerializeField] private bool isGrounded, isFlipped, isFacingBackwards;
 
     //variables del modelo 3d
     GameObject m_gameobj;
@@ -56,13 +56,23 @@ public class SkoController : MonoBehaviour
         #region Flip
         if (isGrounded)
         {
-            if ((!isFlipped && moveInput.x < 0) || (isFlipped && moveInput.x > 0))
-            {
-                SpinFlip();
-                X_Flip();
+            //se inverte
+            if (isFacingBackwards) 
+            {    
+                if ((!isFlipped && moveInput.x > 0) || (isFlipped && moveInput.x < 0))
+                {
+                    X_Flip();
+                }
+            }
+            else 
+            {    
+                if ((!isFlipped && moveInput.x < 0) || (isFlipped && moveInput.x > 0))
+                {
+                    X_Flip();
+                }
             }
 
-            if ((!isMovingBackwards && moveInput.y > 0) || (isMovingBackwards && moveInput.y < 0))
+            if ((!isFacingBackwards && moveInput.y > 0) || (isFacingBackwards && moveInput.y < 0))
             {
                 Back_Flip();
             }
@@ -87,9 +97,10 @@ public class SkoController : MonoBehaviour
 
     void Back_Flip()
     {
-        print(isMovingBackwards ? -180 : 180);
-        transform.Rotate(0, 180, 0);
-        isMovingBackwards = !isMovingBackwards;
+        print(isFacingBackwards ? -180 : 180);
+        transform.Rotate(0, isFacingBackwards ? -180 : 180, 0);
+        X_Flip();
+        isFacingBackwards = !isFacingBackwards;
     }
 
     void SpinFlip()

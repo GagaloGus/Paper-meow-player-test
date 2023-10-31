@@ -152,7 +152,7 @@ Transform:
   m_GameObject: {fileID: 24280129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.076945, y: 0.438, z: 2.25}
+  m_LocalPosition: {x: 9.634, y: 0.438, z: -1.391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -200,8 +200,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.096898995, y: 0.8335717, z: 0.9074261}
-  m_Center: {x: 0.010239862, y: -0.03598903, z: -0.04628694}
+  m_Size: {x: 0.096899025, y: 0.7984662, z: 0.9074265}
+  m_Center: {x: 0.010239856, y: -0.018436268, z: -0.046286937}
 --- !u!54 &24280133
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &24280134
 MonoBehaviour:
@@ -246,7 +246,7 @@ MonoBehaviour:
   jumpForce: 20
   isGrounded: 0
   isFlipped: 0
-  isMovingBackwards: 0
+  isFacingBackwards: 0
 --- !u!1 &153502031
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 153502031}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.419, z: 0}
+  m_LocalPosition: {x: 0, y: -0.411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -685,13 +685,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14562222, y: -0, z: -0, w: 0.9893403}
-  m_LocalPosition: {x: 9.888, y: 4.42, z: -4.33}
+  m_LocalRotation: {x: -0.06371985, y: -0, z: -0, w: 0.99796784}
+  m_LocalPosition: {x: 12.52, y: 0.47, z: -2.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 16.747002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.307, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba0edd5510c719e42ba6f02193550fce, type: 3}
   m_Name: 
