@@ -64,14 +64,14 @@ public class SkoController : MonoBehaviour
             //se inverte
             if (isFacingBackwards) 
             {    
-                if ((!isFlipped && moveInput.x > 0) || (isFlipped && moveInput.x < 0))
+                if ((isFlipped && moveInput.x > 0) || (!isFlipped && moveInput.x < 0))
                 {
                     X_Flip();
                 }
             }
             else 
             {    
-                if ((!isFlipped && moveInput.x < 0) || (isFlipped && moveInput.x > 0))
+                if ((isFlipped && moveInput.x < 0) || (!isFlipped && moveInput.x > 0))
                 {
                     X_Flip();
                 }
@@ -84,19 +84,21 @@ public class SkoController : MonoBehaviour
 
         }
 
+        //transform.Rotate(0, Input.GetAxis("Rotate Horizontal") * 0.5f, 0);
+
         #endregion
 
         #region Animation
         isRunning = Input.GetKey(KeyCode.LeftShift) && isGrounded;
 
         m_animator.SetBool("isRunning", isRunning);
-        m_animator.SetBool("isWalking", rb.velocity.x != 0 || rb.velocity.z != 0);
+        m_animator.SetBool("isWalking", Input.GetAxisRaw("Horizontal") != 0);
 
         m_animator.SetBool("grounded", isGrounded);
         if(!isGrounded) 
         {
-            if(rb.velocity.y > 0.1f) { m_animator.SetBool("jumpingUp", true); }
-            else if(rb.velocity.y < -0.1f) { m_animator.SetBool("jumpingUp", false); }
+            if(rb.velocity.y > 0f) { m_animator.SetBool("jumpingUp", true); }
+            else if(rb.velocity.y < 0f) { m_animator.SetBool("jumpingUp", false); }
         }
 
         if (Input.GetKeyDown(KeyCode.P)) 
@@ -107,12 +109,12 @@ public class SkoController : MonoBehaviour
         #endregion
     }
 
-        void X_Flip()
+    void X_Flip()
     {
         m_gameobj.transform.localScale = new(
-            m_gameobj.transform.localScale.x, 
-            m_gameobj.transform.localScale.y, 
-            -1 * m_gameobj.transform.localScale.z);
+            -1 * m_gameobj.transform.localScale.x,
+            m_gameobj.transform.localScale.y,
+            m_gameobj.transform.localScale.z);
 
         isFlipped = !isFlipped;
     }
@@ -127,7 +129,6 @@ public class SkoController : MonoBehaviour
 
     void SpinFlip()
     {
-        print("speen");
         animator.SetTrigger("startSpin");
     }
 }

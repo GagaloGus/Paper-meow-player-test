@@ -95,7 +95,7 @@ MonoBehaviour:
     back: {fileID: 2800000, guid: 872a179c784d41447a4d49d20aafac85, type: 3}
   - name: jumpUp_01
     front: {fileID: 2800000, guid: eb63ee77470f4f246884753d75162a77, type: 3}
-    back: {fileID: 2800000, guid: c875c9b7ea10ae546a7a28ed873a55b5, type: 3}
+    back: {fileID: 2800000, guid: fea3c154f4c80c547892d3e93db9c5db, type: 3}
   - name: jumpDown_01
     front: {fileID: 2800000, guid: ce87c45a857140c4e9ea4c8adf04a0e6, type: 3}
     back: {fileID: 2800000, guid: c875c9b7ea10ae546a7a28ed873a55b5, type: 3}
@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8344253251668500606}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 10.333366, y: 0.431, z: 0.19942975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -220,7 +220,7 @@ Transform:
   - {fileID: 6513385704784279613}
   - {fileID: 5376614447852608461}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &1883984186185959432
 Animator:
   serializedVersion: 5
@@ -260,6 +260,8 @@ MonoBehaviour:
   isGrounded: 0
   isFlipped: 0
   isFacingBackwards: 0
+  isRunning: 0
+  weaponSelected: 0
 --- !u!54 &2120665806219072765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -285,7 +287,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &72071289077555267
 BoxCollider:

@@ -58,13 +58,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0
-    functionName: ChangeTexture
-    data: walk_01
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.33333334
     functionName: ChangeTexture
     data: idle_01
@@ -73,8 +66,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.6666667
-    functionName: 
-    data: 
+    functionName: ChangeTexture
+    data: walk_01
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
